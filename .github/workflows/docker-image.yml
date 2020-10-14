@@ -1,4 +1,4 @@
-name: Salt Docker Image CI
+name: Salt Docker Image CI (GitHub actions)
 
 on:
   push:
@@ -14,5 +14,5 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build the Docker image
+    - name: Build the Salt Docker image
       run: docker-compose build
