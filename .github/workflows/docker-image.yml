@@ -19,6 +19,6 @@ jobs:
     - name: Run Salt master and minion
       run: docker-compose up -d
     - name: Run Salt to ping Minion
-      run: docker-compose exec salt-master salt '*' test.ping
+      run: docker-compose exec -T salt-master salt '*' test.ping
     - name: Run grains
-      run: docker-compose exec salt-master salt '*' grains.items --out=json
+      run: docker-compose exec -T salt-master salt '*' grains.items --out=json
