@@ -16,6 +16,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build the Salt Docker image
       run: docker-compose build
+    - name: Run Salt master and minion
+      run: docker-compose up -d
     - name: Run Salt to ping Minion
       run: docker-compose exec salt-master salt '*' test.ping
     - name: Run grains
