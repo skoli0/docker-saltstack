@@ -21,4 +21,4 @@ jobs:
     - name: Run Salt to ping Minion
       run: docker-compose exec -T salt-master salt '*' test.ping
     - name: Manage states by installing Apache and Nginx
-      run: docker-compose exec -T salt-master salt '*' state.highstate
+      run: docker-compose exec -T salt-master salt '*' state.highstate --out=json
