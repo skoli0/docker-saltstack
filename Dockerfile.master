@@ -15,4 +15,6 @@ RUN apt-get update -y && \
 
 RUN sed -i "s|#auto_accept: False|auto_accept: True|g" /etc/salt/master
 
+COPY salt /srv/salt
+
 ENTRYPOINT ["salt-master", "-l", "debug"]
