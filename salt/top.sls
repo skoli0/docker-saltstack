@@ -2,3 +2,4 @@ base:
     '*':
         - apache
         - nginx
+        - vim
