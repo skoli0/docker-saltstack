@@ -15,11 +15,15 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    
     - name: Build the Salt Docker image
       run: docker-compose build
+    
     - name: Run Salt master and minion
       run: docker-compose up -d
+    
     - name: Run Salt to ping Minion
       run: docker-compose exec -T salt-master salt '*' test.ping
+    
     - name: Manage states by installing Apache and Nginx
       run: docker-compose exec -T salt-master salt '*' state.highstate --out=json
